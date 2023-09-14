@@ -1,4 +1,8 @@
-import 'package:bazaar_app/screens/home_screen.dart';
+// ignore: file_names
+// ignore_for_file: file_names, duplicate_ignore
+
+import 'package:bazaar_app/screens/craft_screen.dart';
+import 'package:bazaar_app/view/painting_componets_view.dart';
 import 'package:flutter/material.dart';
 
 class BottomNav extends StatefulWidget {
@@ -9,18 +13,31 @@ class BottomNav extends StatefulWidget {
 }
 
 class _BottomNavState extends State<BottomNav> {
-  int index = 0;
+  int currentIndex = 0;
+  List<Widget> home = [const CraftScreen(), const PaintingComponentView()];
   List<Widget> pages = [
-    const HomeScreen(),
+    const CraftScreen(),
     const Center(
       child: Text(
-        'Cart',
+        'Chat Screen',
         style: TextStyle(color: Colors.black, fontSize: 25),
       ),
     ),
     const Center(
       child: Text(
-        'Profile',
+        'Sell Screen',
+        style: TextStyle(color: Colors.black, fontSize: 25),
+      ),
+    ),
+    const Center(
+      child: Text(
+        'Cart Screen',
+        style: TextStyle(color: Colors.black, fontSize: 25),
+      ),
+    ),
+    const Center(
+      child: Text(
+        'Profile Screen',
         style: TextStyle(color: Colors.black, fontSize: 25),
       ),
     ),
@@ -28,29 +45,52 @@ class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[index],
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: index,
-        onDestinationSelected: (index) => setState(() => this.index = index),
-        height: 60,
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-            selectedIcon: Icon(Icons.home),
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.shopping_cart_outlined),
-            label: 'Cart',
-            selectedIcon: Icon(Icons.shopping_cart),
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.manage_accounts_rounded),
-            label: 'Profile',
-            selectedIcon: Icon(Icons.manage_accounts),
-          )
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+              label: 'Home',
+              icon: Icon(
+                Icons.home_outlined,
+                size: 23,
+              ),
+              activeIcon: Icon(Icons.home)),
+          BottomNavigationBarItem(
+              label: 'Chat',
+              icon: Icon(
+                Icons.messenger_outline,
+                size: 23,
+              ),
+              activeIcon: Icon(Icons.message_rounded)),
+          BottomNavigationBarItem(
+              label: 'Sell',
+              icon: Icon(
+                Icons.attach_money_rounded,
+                size: 23,
+              ),
+              activeIcon: Icon(Icons.attach_money_rounded)),
+          BottomNavigationBarItem(
+              label: 'Cart',
+              icon: Icon(
+                Icons.local_grocery_store_outlined,
+                size: 23,
+              ),
+              activeIcon: Icon(Icons.local_grocery_store)),
+          BottomNavigationBarItem(
+              label: 'Account',
+              icon: Icon(
+                Icons.account_circle_outlined,
+                size: 23,
+              ),
+              activeIcon: Icon(Icons.account_circle_rounded)),
         ],
+        currentIndex: currentIndex,
+        onTap: (index) => setState(() => currentIndex = index),
+        selectedItemColor: Colors.red,
+        unselectedItemColor: Colors.black,
+        showUnselectedLabels: true,
+        showSelectedLabels: true,
       ),
+      body: pages.elementAt(currentIndex),
     );
   }
 }

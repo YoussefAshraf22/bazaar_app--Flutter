@@ -7,19 +7,18 @@ class ItemComponents extends StatelessWidget {
   ItemComponentModel model;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: InkWell(
-        onTap: model.onTap,
-        // child: Container(
-        //   width: 160,
-        //   height: 250,
-        //   decoration: BoxDecoration(
-        //       border: Border.all(
-        //         width: 0.3,
-        //         color: Colors.grey,
-        //       ),
-        //       borderRadius: BorderRadius.circular(5)),
+    return GestureDetector(
+      onTap: model.onTap,
+      child: Container(
+        width: 158,
+        height: 250,
+        margin: const EdgeInsets.symmetric(horizontal: 10),
+        decoration: BoxDecoration(
+            border: Border.all(
+              width: 0.7,
+              color: Colors.grey,
+            ),
+            borderRadius: BorderRadius.circular(5)),
         child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,7 +28,7 @@ class ItemComponents extends StatelessWidget {
                 alignment: Alignment.topRight,
                 children: [
                   Container(
-                    width: 160,
+                    width: 158,
                     height: 140,
                     decoration: BoxDecoration(
                         image: DecorationImage(
@@ -83,6 +82,5 @@ class ItemComponents extends StatelessWidget {
             ]),
       ),
     );
-    // );
   }
 }

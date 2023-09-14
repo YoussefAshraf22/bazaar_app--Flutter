@@ -2,8 +2,8 @@ import 'package:bazaar_app/model/item_componet_model.dart';
 import 'package:bazaar_app/widgets/items_components.dart';
 import 'package:flutter/material.dart';
 
-class ItemComponentView extends StatelessWidget {
-  const ItemComponentView({super.key});
+class CraftComponentView extends StatelessWidget {
+  const CraftComponentView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -68,8 +68,9 @@ class ItemComponentView extends StatelessWidget {
 
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, mainAxisSpacing: 10, mainAxisExtent: 250),
-      itemBuilder: (context, index) => ItemComponents(model: component[index]),
+          crossAxisCount: 2, mainAxisSpacing: 20, mainAxisExtent: 250),
+      itemBuilder: (context, index) =>
+          ItemComponents(model: component[index]),
       itemCount: component.length,
       scrollDirection: Axis.vertical,
       physics: const NeverScrollableScrollPhysics(),

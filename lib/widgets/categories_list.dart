@@ -7,37 +7,27 @@ class CategoriesList extends StatelessWidget {
   CategoriesList({super.key, required this.model});
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-          ),
-          child: SizedBox(
-            height: 150,
-            child: InkWell(
-              onTap: model.onTap,
-              child: CircleAvatar(
-                backgroundImage: AssetImage(
-                  model.img,
-                ),
-                radius: 50,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 120),
-                  child: Text(
-                    model.categoryName,
-                    style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w300,
-                        color: Colors.black),
-                  ),
-                ),
+    return InkWell(
+      onTap: model.onTap,
+      child: Column(
+        children: [
+          Padding(
+            padding:
+                const EdgeInsets.only(top: 18, bottom: 5, right: 22, left: 22),
+            child: CircleAvatar(
+              backgroundImage: AssetImage(
+                model.img,
               ),
+              radius: 43,
             ),
           ),
-        ),
-      ],
+          Text(
+            model.categoryName,
+            style: const TextStyle(
+                fontSize: 17, fontWeight: FontWeight.w400, color: Colors.black),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:bazaar_app/screens/home_screen.dart';
+import 'package:bazaar_app/navigation/bottomNav.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class BazaarApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
       title: 'Bazaar App',
-      home: const HomeScreen(),
+      home: const BottomNav(),
     );
   }
 }
