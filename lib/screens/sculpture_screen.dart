@@ -1,5 +1,5 @@
 import 'package:bazaar_app/model/item_componet_model.dart';
-import 'package:bazaar_app/view/category_view.dart';
+import 'package:bazaar_app/screens/category_view.dart';
 import 'package:bazaar_app/widgets/header.dart';
 import 'package:bazaar_app/widgets/items_components.dart';
 import 'package:bazaar_app/widgets/search_bar.dart';
@@ -12,7 +12,7 @@ class SculptureScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     List<ItemComponentModel> component = [
       ItemComponentModel(
-          categoryName: 'Sculpture.jpg',
+          categoryName: 'Sculpture',
           categoryImg: 'sculpture.jpg',
           locaion: 'Downtown - Cairo',
           ownerName: 'Youssef',
@@ -54,13 +54,13 @@ class SculptureScreen extends StatelessWidget {
           price: 45.99,
           onTap: () {}),
     ];
-    return  SafeArea(
+    return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
           child: Column(children: [
-            HeaderWidget(),
-            SearchWidget(),
-            SizedBox(height: 150, child: CategoryView()),
+            const HeaderWidget(),
+            const SearchWidget(),
+            const SizedBox(height: 150, child: CategoryView()),
             GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2, mainAxisSpacing: 20, mainAxisExtent: 250),

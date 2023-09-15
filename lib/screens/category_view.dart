@@ -32,16 +32,19 @@ class CategoryView extends StatelessWidget {
                 ));
           }),
       CategoriesModel(
-          categoryName: 'Accessories ', img: 'accessories.png', onTap: () {
-             Navigator.pushReplacement(
+          categoryName: 'Accessories ',
+          img: 'accessories.png',
+          onTap: () {
+            Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const AccessoriesScreen(),
                 ));
           }),
       CategoriesModel(
-          categoryName: 'Sculpture ', img: 'sculpture.jpg', onTap: () {
-            
+          categoryName: 'Sculpture ',
+          img: 'sculpture.jpg',
+          onTap: () {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
