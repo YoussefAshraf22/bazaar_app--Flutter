@@ -2,7 +2,6 @@
 // ignore_for_file: file_names, duplicate_ignore
 
 import 'package:bazaar_app/screens/craft_screen.dart';
-import 'package:bazaar_app/view/painting_componets_view.dart';
 import 'package:flutter/material.dart';
 
 class BottomNav extends StatefulWidget {
@@ -14,8 +13,7 @@ class BottomNav extends StatefulWidget {
 
 class _BottomNavState extends State<BottomNav> {
   int currentIndex = 0;
-  List<Widget> home = [const CraftScreen(), const PaintingComponentView()];
-  List<Widget> pages = [
+   List<Widget> pages = [
     const CraftScreen(),
     const Center(
       child: Text(
